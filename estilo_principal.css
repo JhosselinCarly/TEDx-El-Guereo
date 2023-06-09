@@ -1,0 +1,462 @@
+*
+{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+:root
+{
+    --fondo-blanco:#fff;
+    --color-destacado:#c00707;
+    --fondo-negro:#0f0f0b;
+    --fondo-gris:#919191;
+    --fondo-gris-a:#efefef;
+    --letras-blanco:#ffff;
+}
+body
+{
+    background-color: var(--fondo-negro);
+}
+
+/*ENCABEZADO*/
+nav
+{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    z-index: 10;
+    top: 0;
+}
+nav .izq
+{
+    width: 20%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: -15px;
+    margin-top: -40px;
+}
+nav .izq img
+{
+    cursor: pointer;
+    
+}
+nav .centro
+{
+    width: 10%;
+}
+nav .der
+{
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+    row-gap: 30px;
+}
+nav .der .menu ul
+{
+    display: flex;
+    position: relative;
+    row-gap: 20px;
+    padding: 4px 12px;
+}
+nav .der .menu a
+{
+    text-decoration: none;
+    color: white;
+    padding: 4px 12px;
+}
+nav .der .menu ul li 
+{
+    width: 120px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+    list-style: none;
+    text-align: center;
+    border-style:hidden;
+    color: white;
+    font-size: 18px;
+    padding: 4px 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+nav .der .menu ul li:nth-child(1)
+{
+    color: #0f0f0b;
+    box-shadow:0 0 6px #fff;
+    background-color:rgba(255, 255, 255, 0.1);
+}
+.menu ul li:hover
+{
+    transition: ease all 0.1s;
+    color: #0f0f0b;
+    box-shadow:0 0 6px #fff;
+    transition: 0.5s;
+    background-color:rgba(255, 255, 255, 0.2)
+}
+
+.iconos
+{
+    width: 150px;
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-left: 12px;
+}
+.iconos i
+{
+    font-size: 1.5rem;
+    color: white;
+    cursor: pointer;
+}
+.iconos i:hover
+{
+    transition: ease all 0.1s;
+    color: #ffff;
+    text-shadow: 0 0 20px #fff;
+    transition: 0s;
+    padding: 0 2px;
+}
+
+
+.buscador
+{
+position: fixed;
+left: 60px;
+top: 30px;
+width: 50px;
+height: 50px;
+background:black;
+border-radius: 6px;
+z-index: 2;
+pointer-events: none;
+padding: 20px 30px;
+box-sizing: border-box;
+}
+.buscador:before:hover
+{
+    background-color: white;
+}
+.buscador:before
+{
+content: 'close';
+position: absolute;
+top: 0;
+right: 0;
+left: 0;
+bottom: 0;
+color: red;
+text-align: center;
+line-height: 50px;
+text-transform: uppercase;
+font-weight: 700px;
+}
+input[type="checkbox"]:checked ~  .buscador:before
+{
+content: 'menu';
+color: #fff;
+}
+
+
+.lineas 
+{
+    height: 60px;
+}
+
+.portada
+{
+    width: 100%;
+    height: 600px;
+    background-image: url(img/PORT-3.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: 0px -100px;
+    padding: 64px 0px;
+    box-sizing: border-box;
+   
+}
+.seccion1
+{
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    padding: 18px 20px;
+}
+.seccion1 img
+{
+    width: 90%;
+    object-fit: cover;
+    object-position: center;
+
+}
+.seccion1 .texto 
+{
+    width: 90%;
+    padding: 20px;
+    margin-right: 20px;
+}
+.seccion1 .texto h1
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 16px;
+}
+.seccion1 .texto p
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+}
+
+.centro .titulo h1
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 28px;
+    color: var(--letras-blanco);
+    padding: 0px 36px;
+    margin-bottom: 8px;
+}
+.slider
+{
+    width: 100%;
+    height: 400px;
+    margin-top: 0px;
+    padding: 8px;
+    box-sizing: border-box;
+}
+.slider ul
+{
+    width: 400px;
+    height: 400px;
+    margin-left: var(--margenizquierdo);
+    margin-right: var(--margenderecho);
+    margin-top: -8px;
+    animation-name: slider;
+    animation-duration: 10s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+    align-content: center;
+    display: flex;
+    flex-direction: row;
+    
+}
+.slider ul :hover
+{
+    width: 400px;
+    height: 400px;
+    background-color: rgba(255, 255, 255, 0.9);
+    transition: 0.3s;
+}
+.slider ul li
+{
+    margin-top: 0px;
+    list-style: none;
+    align-items: center;
+    
+}
+.slider ul li img
+{
+    width: 400px;
+    height: 400px;
+    padding: 16px;
+    top: 0%;
+}
+
+@keyframes slider
+{
+    0% {margin-left: 0px;}
+    15% {margin-left: -80px;}
+    20% {margin-left:-200px;}
+    35% {margin-left:-400px;}
+    40% {margin-left:-600px;}
+    55% {margin-left:-800px;}
+    60% {margin-left:-1000p;}
+    75% {margin-left:-1200p;}
+    80% {margin-left:-1600p;}
+    100% {margin-left:-2000;}
+}
+.centro .team-img ul:nth-child(1)
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.centro .team-img ul:nth-child(1) img
+{
+    width: 650px;
+    height: auto;
+    padding: 12px 0px;
+}
+.centro .team-img .fotos
+{
+    width: auto;
+    height: auto;
+    padding: 24px 28px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    
+}
+.centro .team-img .fotos img:hover
+{
+    transition: 0.3s;
+    width: 426px;
+    height: auto;
+}
+.centro .team-img .fotos img
+{
+    width: 420px;
+    height: auto;
+}
+
+.pie
+{
+    width: 100%;
+    height: 180px;
+    background-image: url(img/FOOT-3.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: 0px -100px;
+    padding: 64px 30px;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+
+}
+.pie .suscribite
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pie .suscribite .sus-text1 img
+{
+    width:220px;
+    height: auto;
+}
+.pie .centro
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    color: var(--letras-blanco);
+    line-height: 26px;
+    position: relative;
+    font-weight:400;
+}
+.pie .centro p:hover
+{
+    color:var(--fondo-negro);
+    font-weight: bolder;
+    cursor: pointer;
+    transition: 0,2s;
+}
+.pie .suscribite .sus-text
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: var(--letras-blanco);
+    margin-right: 16px;
+    line-height: 28px;
+}
+.pie .suscribite .sus-text p
+{
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+.pie .suscribite .sus-text .contenedor-email
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 0 1 685px;
+}
+.pie .suscribite .sus-text .contenedor-email input
+{
+  height: 36px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 12px;
+  color: #0f0f0b;
+  font-size: 1rem;
+}
+.pie .suscribite .sus-text .contenedor-email form
+{
+    position: relative;
+    width: 100%;
+}
+.pie .suscribite .sus-text .contenedor-email .email
+{
+    min-width: 60px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+    background-color: var(--fondo-negro);
+    outline: none;
+    border: none;
+}
+.pie .suscribite .sus-text .contenedor-email .email i
+{
+    font-size: 22px;
+    color: #fff;
+}
+.pie .suscribite .sus-text .contenedor-email .email i:hover
+{
+    cursor: pointer;
+    color: var(--color-destacado);
+    transition: 0.2s;
+}
+.pie .redes
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    
+}
+.pie .redes a
+{
+    list-style: none;
+    text-decoration: none;
+    color: #0f0f0b;
+}
+.pie .redes i
+{
+    background-color: var(--fondo-gris-a);
+    border-radius: 8px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    cursor: pointer;
+    font-size: 20px;
+}
+.pie .redes i:hover
+{
+    color: var(--color-destacado);
+    transition: 0.1s;
+}

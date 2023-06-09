@@ -1,0 +1,126 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+section
+{
+    position: relative;
+    width: 100%;
+    background-image: url(img/fondo.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: 0px -100px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    font-size:30px;
+}
+i
+{
+    color:rgba(0, 0, 0, 0.5);
+    transition: 1s;
+    padding: 0 5px;
+    user-select: none;
+    cursor: default;
+   
+}
+i:hover
+{
+    color: #0f0;
+    text-shadow: 0 0 20px #0f0;
+    transition: 0s;
+    padding: 0 5px;
+}
+section .fila
+{
+    position: relative;
+    width: 100%;
+    display: flex;
+    padding: 10px 0;
+    white-space: nowrap;
+    transform: rotate(-30deg);
+    top: -50%;
+}
+
+section .fila div
+{
+    animation: giro 80s linear infinite;
+    animation-delay: -80s;
+}
+@keyframes giro
+{
+    0%
+    {
+        transform: translateX(100%);
+
+    }
+    100%
+    {
+        transform: translateX(-100%);
+    }
+}
+
+section .fila div:nth-child(2)
+{
+    animation: giroB 80s linear infinite;
+    animation-delay: -40s;
+}
+@keyframes giroB
+{
+    0%
+    {
+        transform: translateX(0%);
+
+    }
+    100%
+    {
+        transform: translateX(-200%);
+    }
+}
+
+section .fila:nth-child(even) div
+{
+    animation: reversa 80s linear infinite;
+    animation-delay: -80s;
+}
+@keyframes reversa
+{
+    0%
+    {
+        transform: translateX(-100%);
+
+    }
+    100%
+    {
+        transform: translateX(100%);
+    }
+}
+
+section .fila:nth-child(even) div:nth-child(2)
+{
+    animation: reversaB 80s linear infinite;
+    animation-delay: -40s;
+}
+@keyframes reversaB
+{
+    0%
+    {
+        transform: translateX(-200%);
+
+    }
+    100%
+    {
+        transform: translateX(0%);
+    }
+}
+
+.logo svg 
+{
+    position: relative;
+    float: right;
+    z-index: 1;
+
+}
